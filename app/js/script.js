@@ -11,10 +11,10 @@
 			location.hash = '';
 		});
 
-		$('.item').live('click', function(){
+		$('.js-scroll-to').live('click', function(){
 			 if($(this).parent().attr('id') == 'main-menu'){
 				if(!$(this).hasClass('image')){
-			  		item_id = $(this).attr('id');
+			  		item_id = $(this).attr('data-id');
 			  		$('.item').removeClass('active'); 
 			  		$(this).addClass('active');
 				  	$('html,body').animate({
@@ -29,12 +29,11 @@
 			}
 			else {
 				if(!$(this).hasClass('image')){
-			  		item_ids = $(this).parent().attr('tag');
-			  		$('.item').removeClass('active'); 
-			  		$(this).addClass('active');
-				  	$('html,body').animate({
-				        scrollTop: $("." + item_ids).offset().top},
-				    'slow');
+			  		item_id = $(this).attr('data-id');
+			  		//console.log(item_id);
+					$('html,body').animate({
+				    	scrollTop: $("." + item_id).offset().top},
+					'slow');
 				}
 				else {
 				  	$('html,body').animate({
@@ -42,6 +41,7 @@
 				    'slow');
 				}
 			}
+
 
 		});
 
