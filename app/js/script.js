@@ -97,15 +97,18 @@
 
 		});
 
-		$('.photo-load .button').live('click', function(){
+		$('.photo-load .button').live('click', function(e){
+			e.preventDefault();
+
 			$('#file-upload').click();
 		});
 
-		$('.fifth .button').live('click', function(){
+		// $('.fifth .button').live('click', function(){
 
-			$('#pop-up-upload-photo').fadeIn('slow');
+		 	//$('#pop-up-upload-photo').fadeIn('slow');
 
-		});
+		// });
+
 
 	});
 
