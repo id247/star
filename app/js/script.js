@@ -1,5 +1,7 @@
 (function($) {
 
+	var placeholder = 'https://ad.csdnevnik.ru/special/prodaction/dnevnik_star/images/cap.png';
+
 	$(document).ready(function() {
 
 		$('.second .button').live('click', function(){
@@ -74,7 +76,9 @@
 
 			if(!$('#pop-up-images .image-and-like:last').hasClass('active')) {
 				$('.image-and-like').removeClass('active');
-				active.next().addClass('active');
+				$('.image-and-like').find('.photo').attr('src', placeholder);
+				var nextPhoto = active.next().addClass('active').find('.photo');
+				nextPhoto.attr('src', nextPhoto.attr('data-original'));
 			}
 
 		});
@@ -92,7 +96,9 @@
 
 			if(!$('#pop-up-images .image-and-like:first').hasClass('active')) {
 				$('.image-and-like').removeClass('active');
-				active.prev().addClass('active');
+				$('.image-and-like').find('.photo').attr('src', placeholder);
+				var nextPhoto = active.prev().addClass('active').find('.photo');
+				nextPhoto.attr('src', nextPhoto.attr('data-original'));
 			}
 
 		});
