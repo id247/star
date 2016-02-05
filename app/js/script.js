@@ -4,13 +4,15 @@
 
 	$(document).ready(function() {
 
-		$('.second .button').live('click', function(){
+		$('.second .button').live('click', function(e){
+			e.preventDefault();
 			$('#pop-up-shop').fadeIn('slow');
 		});
 
-		$('.close').live('click', function(){
+		$('.close').live('click', function(e){
+			e.preventDefault();
 			$('#pop-up-shop, #pop-up-images, #pop-up-upload-photo').fadeOut('slow');
-			location.hash = '';
+			//location.hash = '';
 		});
 
 		$('.js-scroll-to').live('click', function(){
